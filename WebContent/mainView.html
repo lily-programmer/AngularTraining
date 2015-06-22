@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+<title>Finance Meter</title>
+</head>
+<body ng-controller="TestController">
+
+Your Salary?
+<input type="text" ng-model="salary">
+
+<br/>How much should you invest in shopping?
+<input type="text" ng-model="percentage">%
+
+<br/>The amount to be spent on gadgets will be:
+
+<!-- THIS IS A PROPER FUNCTION CALL -->
+<span>{{result()}}</span>
+<br>
+<br>
+<!-- THIS BUTTON CALLS A METHOD THAT STORES DATA INTO AN ARRAY -->
+ <button type="button" ng-click="agregarTexto()">Add</button>  
+ 
+ <table class="table table-striped">
+          <thead>
+          <tr>
+            <th>Salaries</th>
+            <th>Percentages</th>
+          </tr>
+          </thead>
+          <tbody>
+          
+          <!-- HERE IS WHERE THE DATA IS EXTRACTED OUT OF THE ARRAY -->
+          <tr ng-repeat="data in testArray">
+            <td>{{data.salary}}</td>
+            <td>{{data.percentage | uppercase}}</td>
+          </tr>
+          </tbody>
+        </table>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<script src="app.js"></script>
+<script src="demo_controller.js"></script>
+</body>
+</html>
